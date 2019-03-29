@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+
+#item-button {
+  height: 50px;
+  width: 200px;
+  margin: 10px 10px;
+  background-color: royalblue;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  padding: 15px;
+}
+
+#bgImg {
+  background-image: none;
+  background-position: unset;
+  background-repeat: none;
+  background-size: auto;
+}
+
+.teamGif {
+  border: 5px solid;
+  border-color: black;
+}
