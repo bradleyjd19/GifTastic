@@ -3,60 +3,113 @@ $(document).ready(function () {
 
   var teams = [
 
-    team1 = {
+    {
       name: "Virginia Cavaliers",
       song: "./assets/sounds/UVA.mp3",
       background: "url('./assets/images/UVA.jpg')",
-      border: "orange"
+      border: "#F84C1E",
+      buttonColor: "#232D4B",
+      textColor: "#F84C1E"
     },
 
-    team2 = {
+    {
       name: "North Carolina Tar Heels",
       song: "./assets/sounds/UNC.mp3",
       background: "url('./assets/images/UNC.jpg')",
-      border: "skyblue"
+      border: "#7BAFD4",
+      buttonColor: "#7BAFD4",
+      textColor: "#FFF"
     },
 
-    team3 = {
+    {
       name: "Kansas Jayhawks",
       song: "./assets/sounds/Kansas.mp3",
-      background: "url('./assets/images/UNC.jpg')",
-      border: "dodgerblue"
+      background: "url('./assets/images/KU.jpg')",
+      border: "#0051BA",
+      buttonColor: "#0051BA",
+      textColor: "#E8000D"
     },
 
-    // team4 = {
-    //   name: "Indiana Hoosiers", 
-    // },
+    {
+      name: "Indiana Hoosiers",
+      song: "./assets/sounds/Indiana.mp3",
+      background: "url('./assets/images/Indy.jpg')",
+      border: "#990000",
+      buttonColor: "#990000",
+      textColor: "#EEEDEB"
+    },
 
-    // team5 = {
-    //   name: "Michigan State Spartans",
-    //   song: "./assets/sounds/MSU.mp3",
-    //   background: "url('./assets/images/UNC.jpg')"
-    // },
+    {
+      name: "Michigan State Spartans",
+      song: "./assets/sounds/MSU.mp3",
+      background: "url('./assets/images/MSU.jpg')",
+      border: "#18453B",
+      buttonColor: "#18453B",
+      textColor: "#FFFFFF"
+    },
 
-    // team6 = {
-    //   name: "Kentucky Wildcats",
-    //   song: "./assets/sounds/UK.mp3",
-    //   background: "url('./assets/images/UNC.jpg')"
-    // },
+    {
+      name: "Kentucky Wildcats",
+      song: "./assets/sounds/UK.mp3",
+      background: "url('./assets/images/UK.jpg')",
+      border: "#0033A0",
+      buttonColor: "#0033A0",
+      textColor: "#FFFFFF"
+    },
 
-    // team7 = {
-    //   name: "Tennessee Volunteers", 
-    // },
+    {
+      name: "Tennessee Volunteers",
+      song: "./assets/sounds/Tenn.mp3",
+      background: "url('./assets/images/Tenn.jpg')",
+      border: "#FF8200",
+      buttonColor: "#FF8200",
+      textColor: "#FFFFFF"
+    },
 
-    // team8 = {
-    //   name: "Wisconsin Badgers", 
-    // },
+    {
+      name: "Wisconsin Badgers",
+      song: "./assets/sounds/Wisc.mp3",
+      background: "url('./assets/images/Wisc.jpg')",
+      border: "#C5050C",
+      buttonColor: "#C5050C",
+      textColor: "#FFFFFF"
+    },
 
-    // team9 = {
-    //   name: "Arizona Wildcats",
-    //   song: "./assets/sounds/Zona.mp3",
-    //   background: "url('./assets/images/UNC.jpg')"
-    // },
+    {
+      name: "Arizona Wildcats",
+      song: "./assets/sounds/Zona.mp3",
+      background: "url('./assets/images/Zona.jpg')",
+      border: "#003366",
+      buttonColor: "#003366",
+      textColor: "#CC0033"
+    },
 
-    // team10 = {
-    //   name: "Duke Blue Devils", 
-    // }
+    {
+      name: "Louisville Cardinals",
+      song: "./assets/sounds/Louis.mp3",
+      background: "url('./assets/images/Louis.jpg')",
+      border: "#AD0000",
+      buttonColor: "#AD0000",
+      textColor: "#000000"
+    },
+
+    {
+      name: "Ohio State Buckeyes",
+      song: "./assets/sounds/OhioSt.mp3",
+      background: "url('./assets/images/OhioSt.jpg')",
+      border: "#BB0000",
+      buttonColor: "#BB0000",
+      textColor: "#FFFFFF"
+    },
+
+    {
+      name: "Notre Dame Fighting Irish",
+      song: "./assets/sounds/ND.mp3",
+      background: "url('./assets/images/ND.jpg')",
+      border: "#0C2340",
+      buttonColor: "#0C2340",
+      textColor: "#AE9142"
+    }
   ]
 
 
@@ -65,12 +118,14 @@ $(document).ready(function () {
     for (var i = 0; i < teams.length; i++) {
       var itemButton = $("<button>");
       itemButton
-        .attr("id", "item-button")
+        .addClass("item-button")
         .attr("data-name", teams[i].name)
         .attr("background", teams[i].background)
         .attr("border", teams[i].border)
+        .attr("buttonColor", teams[i].buttonColor)
+        .attr("textColor", teams[i].textColor)
         .text(teams[i].name)
-        .attr("song", teams[i].song);        
+        .attr("song", teams[i].song);
       $("#buttonBlock").append(itemButton);
     }
   }
@@ -81,15 +136,17 @@ $(document).ready(function () {
     var searchItem = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Z2oqC6QA07XEayWCxxTuZiCVJIsR9OKl&q=" + searchItem + " basketball&limit=10&rating=PG&lang=en";
 
-    
+
     $("#bgImg").css("background-image", $(this).attr("background"));
     $("#teamAudio").attr("src", $(this).attr("song"));
     $(".teamGif").css("border-color", $(this).attr("border"));
-    
+    $(".item-button").css("background-color", $(this).attr("buttonColor"));
+    $(".item-button").css("color", $(this).attr("textColor"));
+
     var teamAudio = document.getElementById("teamAudio");
     teamAudio.play();
-    teamAudio.volume = 0.2;
-      
+    teamAudio.volume = 0.1;
+
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -144,13 +201,13 @@ $(document).ready(function () {
     }
   })
 
-  $(document).on("click", "#item-button", displayItem);
+  $(document).on("click", ".item-button", displayItem);
 
 
   $("#add-item").on("click", function (event) {
     event.preventDefault();
     var item = $("#item-input").val().trim();
-    teams.push(item);    
+    teams.push({name: item, song: "./assets/sounds/User.mp3", background: "url('./assets/images/User.jpg"});
     $("#item-input").val("");
     console.log(teams);
     createButton();

@@ -1,26 +1,28 @@
 *{
   box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#item-button {
+
+.item-button {
   height: 50px;
-  width: 200px;
+  width: 225px;
   margin: 10px 10px;
   background-color: royalblue;
   border-radius: 8px;
   color: white;
+  font-weight: bold;
   font-size: 16px;
   padding: 15px;
 }
 
 #bgImg {
-  background-image: none;
-  background-position: unset;
+  background-image: url("../images/bg.jpg");
   background-repeat: none;
   background-size: auto;
 }
 
 .teamGif {
   border: 5px solid;
-  border-color: black;
+  border-color: white;
 }
