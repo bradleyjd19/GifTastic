@@ -31,15 +31,6 @@ $(document).ready(function () {
     },
 
     {
-      name: "Indiana Hoosiers",
-      song: "./assets/sounds/Indiana.mp3",
-      background: "url('./assets/images/Indy.jpg')",
-      border: "#990000",
-      buttonColor: "#990000",
-      textColor: "#EEEDEB"
-    },
-
-    {
       name: "Michigan State Spartans",
       song: "./assets/sounds/MSU.mp3",
       background: "url('./assets/images/MSU.jpg')",
@@ -73,15 +64,6 @@ $(document).ready(function () {
       border: "#C5050C",
       buttonColor: "#C5050C",
       textColor: "#FFFFFF"
-    },
-
-    {
-      name: "Arizona Wildcats",
-      song: "./assets/sounds/Zona.mp3",
-      background: "url('./assets/images/Zona.jpg')",
-      border: "#003366",
-      buttonColor: "#003366",
-      textColor: "#CC0033"
     },
 
     {
@@ -142,6 +124,13 @@ $(document).ready(function () {
     $(".teamGif").css("border-color", $(this).attr("border"));
     $(".item-button").css("background-color", $(this).attr("buttonColor"));
     $(".item-button").css("color", $(this).attr("textColor"));
+    $("#add-item").css("background-color", $(this).attr("buttonColor"));
+    $("#add-item").css("color", $(this).attr("textColor"));
+    $(".download-button").css("background-color", $(this).attr("buttonColor"));
+    $(".download-button").css("color", $(this).attr("textColor"));
+    $(".p-title").css("color", $(this).attr("textColor"));
+    $(".p-rating").css("color", $(this).attr("textColor"));
+
 
     var teamAudio = document.getElementById("teamAudio");
     teamAudio.play();
@@ -168,15 +157,20 @@ $(document).ready(function () {
             .attr("data-animate", image.fixed_height.url)
             .attr("data-state", "still");
           var p1 = $("<p>");
-          p1.text("Title: " + title);
+          p1
+            .addClass("p-title")
+            .text("Title: " + title.toUpperCase());
           var p2 = $("<p>");
-          p2.text("Rating: " + rating);
+          p2
+            .addClass("p-rating")
+            .text("Rating: " + rating.toUpperCase());
           var downloadLink = $("<a>");
           downloadLink
             .attr("href", image.fixed_height.url)
             .attr("value", "download");
           var downloadButton = $("<button>");
           downloadButton
+            .addClass("download-button")
             .text("Download GIF");
           downloadLink.append(downloadButton);
           itemDiv

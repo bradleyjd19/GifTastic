@@ -21,36 +21,32 @@
 
   <audio id="teamAudio" type="audio/mpeg" preload="auto"></audio>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" id="title-div"></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div id="buttonBlock"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+  <div class="container" id="header-container">
+    <div class="row" id="header-row">
+      <div class="col-md-4" id="title-div">NCAA GifTastic</div>
+      <div class="col-md-8">
         <form id="itemInput">
-          <label for="item-input">Add Item Here</label>
+          <label id="new-team" for="item-input">Add New Team Here</label>
           <input type="text" id="item-input">
           <input id="add-item" type="submit">
         </form>
       </div>
     </div>
+  </div>  
+
+  <div class="container" id="note-container">
+    <div class="row" id="input-row">
+      <div class="col-md-4"></div>
+      <div class="col-md-8" id="input-note">
+        <p id="note">*For best results, type in both the school and mascot</p>
+      </div>
+    </div>
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12" id="input-note">
-        <p>*For best results, type in both the school and mascot</p>
+    <div class="row" id="button-row">
+      <div class="col-md-12">
+        <div id="buttonBlock"></div>
       </div>
     </div>
   </div>

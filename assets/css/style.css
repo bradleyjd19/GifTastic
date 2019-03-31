@@ -3,21 +3,77 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.container {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#header-container {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#note-container {
+  margin-bottom: 20px;
+}
+
+#buttonBlock {
+  width: 1300px;
+}
+
+#title-div {
+  font-size: 40px;
+  color: white;
+}
+
+#itemInput {
+  line-height: 40px;
+}
+
+#new-team {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+}
+
+#item-input {
+  width: 400px;
+}
+
+#add-item {
+  background-color: royalblue;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  width: 100px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#note {
+  color: white;
+  margin-left: 190px;
+}
+
+#button-row {
+  margin-bottom: 20px;
+}
 
 .item-button {
   height: 50px;
-  width: 225px;
+  width: 240px;
   margin: 10px 10px;
   background-color: royalblue;
   border-radius: 8px;
   color: white;
   font-weight: bold;
-  font-size: 16px;
-  padding: 15px;
+  font-size: 18px;
+  padding: 5px;
 }
 
 #bgImg {
   background-image: url("../images/bg.jpg");
+  background-position: unset;
   background-repeat: none;
   background-size: auto;
 }
@@ -25,4 +81,23 @@
 .teamGif {
   border: 5px solid;
   border-color: white;
+}
+
+.p-title,
+.p-rating,
+.download-button {
+  margin-top: 5px;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.download-button {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  height: 30px;
+  width: 175px;
+  line-height: 20px;
+  background-color: royalblue;
+  color: white;
 }
